@@ -30,3 +30,14 @@ Verify attribute from JSON payload
     # another way to do same as above..
     ${json_data}    Stringify Json    ${json_data}
     Json Value Should Equal    ${json_data}    /login    "${VALID_USER}"
+
+Verify that user can get weather forecast for given city
+    [Documentation]    BDD style test with params in request
+    [Tags]  bdd
+    Given User connects to weather service
+    When He requests weather info for    Helsinki
+    Then He should be able to get data for correct city
+    
+
+
+    
