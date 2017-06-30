@@ -28,7 +28,5 @@ He requests weather info for
     Set Test Variable    ${given_city}    ${city} 
        
 He should be able to get data for correct city
-    Log    ${json_string}
     Json Value Should Equal    ${json_string}    /name   "${given_city}"
-    Log    ${json_string["weather"]} 
     
