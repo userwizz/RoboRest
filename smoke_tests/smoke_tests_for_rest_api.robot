@@ -32,7 +32,7 @@ Verify attribute from JSON payload
     Json Value Should Equal    ${json_data}    /login    "${VALID_USER}"
 
 Verify that user can get weather forecast for given city
-    [Documentation]    BDD style test with params in request
+    [Documentation]    BDD style test with params in GET request
     [Tags]  bdd
     Given User connects to weather service
     When He requests weather info for    Helsinki
