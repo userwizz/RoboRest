@@ -38,6 +38,12 @@ Verify that user can get weather forecast for given city
     When He requests weather info for    Helsinki
     Then He should be able to get data for correct city
     
+Verify that host is alive
+	[Documentation]    Data-driven test, utilizing own python lib
+    [Template]    Ping host and verfiy response
+    google.com
+    localhost
+    does_not_exists
 
 
     
