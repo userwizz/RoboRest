@@ -14,3 +14,5 @@ libspecs/
 # robot fw results
 *.html
 *.xml
+*.log
+*.png

@@ -1,7 +1,4 @@
 *** Settings ***
-Library    Collections
-Library    RequestsLibrary
-Library    HttpLibrary.HTTP
 Resource    ../res/resources.robot
 Variables    ../res/variables.py
 
@@ -44,6 +41,7 @@ Verify that host is alive
     google.com
     localhost
     does_not_exists
+    
 
-
+	
     

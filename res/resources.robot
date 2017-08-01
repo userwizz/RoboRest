@@ -1,13 +1,17 @@
 *** Settings ***
 Library    RequestsLibrary
 Library    HttpLibrary.HTTP
+Library    Collections
+Library    Selenium2Library
 Library    ../lib/Pinger.py
+
 Resource    ../res/resources.robot
 Variables    ../res/variables.py
 
 *** Variables ***
 ${json_string}    Set during test
 ${given_city}    Set during test
+${my_proxy}    your.proxy:1234
 
 
 *** Keywords ***
@@ -37,5 +41,13 @@ Ping host and verfiy response
     [Arguments]    ${host_to_ping}
     ${response}    Ping host    ${host_to_ping}
     Verify response    ${response}    
+    
+    
+## To open browser using custom webdriver (behind proxy in this case)
+Open browser using webdriver
+	${proxy} 	Evaluate 	sys.modules['selenium.webdriver'].Proxy() 	sys, selenium.webdriver
+	${proxy.http_proxy} 	Set Variable 	${my_proxy}	
+	Create Webdriver 	Firefox 	proxy=${proxy}
+
     
     
