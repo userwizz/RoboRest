@@ -11,6 +11,7 @@ Variables    ../res/variables.py
 *** Variables ***
 ${json_string}    Set during test
 ${given_city}    Set during test
+${browser}    Firefox
 ${my_proxy}    your.proxy:1234
 
 
@@ -47,7 +48,7 @@ Ping host and verfiy response
 Open browser using webdriver
 	${proxy} 	Evaluate 	sys.modules['selenium.webdriver'].Proxy() 	sys, selenium.webdriver
 	${proxy.http_proxy} 	Set Variable 	${my_proxy}	
-	Create Webdriver 	Firefox 	proxy=${proxy}
+	Create Webdriver 	${browser}    proxy=${proxy}
 
     
     
