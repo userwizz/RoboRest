@@ -40,8 +40,4 @@ Verify that host is alive
     [Template]    Ping host and verfiy response
     google.com
     localhost
-    does_not_exists
-    
-
-	
-    
+    #does_not_exists
